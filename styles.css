@@ -1,0 +1,75 @@
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, rgb(126, 217, 87), rgb(25, 60, 95));
+    overflow: auto;
+}
+.container {
+    display: flex; /* Makes the children flex items */
+    align-items: center; /* Optional: Vertically centers items */
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), /* Standard drop shadow (optional, for lift) */
+                0 0 0 1000px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    background-image: linear-gradient(to bottom right, rgb(126, 217, 87), rgb(25, 60, 95));
+}
+h1 {
+    text-align: justify;
+    font-family: sans-serif;
+}
+.features {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: large;
+    position: relative;
+}
+.title{
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: xx-large;            
+}
+
+.title:hover {color: #070bff}
+
+
+.right{
+    text-align: right; 
+    width: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+.features_container{
+    position: relative;
+}
+.basic-button { 
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #020350;
+  border: none;
+  border-radius: 15px;
+}
+
+.basic-button:hover {background-color: #0508ad}
+
+.basic-button:active {
+  background-color: #070bff;
+  transform: translateY(4px);
+}
+
+.phone{
+    align-items: center;
+}
+            
