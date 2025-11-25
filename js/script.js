@@ -4,12 +4,9 @@ const button = document.getElementById('myButton');
 
 // Step 2: Define the function that will run when the button is clicked
 function handleButtonClick() {
-    // This is the "something" that happens!
-    console.log('Button was clicked!');
-    alert('The button has been pressed!');
-    
-    // Example: Change the button's text
-    button.textContent = 'Clicked!';
+    const url = "https://forms.office.com/Pages/ResponsePage.aspx?id=xTzTd7TJZkeVx-1bUV4cziphz6xyu4lEro3MSVcU7xRUN1lSSTlYQ0hRWjNHRzRPOVdUMU5KNlFGVy4u"
+
+    window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 // Step 3: Attach an event listener to the button
