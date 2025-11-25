@@ -72,6 +72,8 @@ h1 {
 
 .phone{
     align-items: center;
+    width: 30%;
+    height: 30%;
 }
 
 .features-grid {
@@ -171,5 +173,17 @@ h1 {
     font-size: 1.5rem;  /* Larger text */
     font-style: italic; /* Classic quote style */
     font-family: serif; /* Optional: Serif fonts look elegant for quotes */
+}
+
+.center-bottom {
+  /* Span across all available columns (1 to end) */
+  grid-column: 1 / -1;
+  
+  /* Shrink the element to fit its content and center it horizontally */
+  /* If you want the box to remain full width, remove this line. */
+  justify-self: center; 
+  
+  /* Optional: Give it a width if you don't want it shrinking to text size */
+  width: 50%; 
 }
             
