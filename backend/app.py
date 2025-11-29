@@ -4,9 +4,11 @@ from flask import Flask, jsonify, request
 # We'll use the official Firebase Admin SDK to interact with Firestore
 import firebase_admin
 from firebase_admin import credentials, firestore
+from flask_cors import CORS
 
 # --- FLASK APP INITIALIZATION ---
 app = Flask(__name__)
+CORS(app, origins=["https://diabeticbuddy.netlify.app"])
 
 # --- FIRESTORE CONFIGURATION (Option B: Explicit Credential Loading) ---
 
@@ -20,20 +22,25 @@ db = None
 fallback_count = 0
 
 try:
-    if os.path.exists(SERVICE_ACCOUNT_PATH):
-        # Explicitly load credentials from the local JSON file
-        cred = credentials.Certificate(SERVICE_ACCOUNT_PATH)
-        
+    # 1. Look for the JSON key content in an environment variable
+    service_account_json = os.environ.get('FIREBASE_SA_JSON')
+
+    if service_account_json:
+        # Load credentials from the secure environment variable
+        cred_dict = json.loads(service_account_json)
+        cred = credentials.Certificate(cred_dict)
+
         if not firebase_admin._apps:
-            # Initialize the Firebase app using the provided certificate
             firebase_admin.initialize_app(cred)
         
         db = firestore.client()
-        print("Firestore client initialized successfully using Service Account Certificate.")
+        print("Firestore client initialized successfully using Environment Variable.")
         
     else:
-        print(f"Service Account file not found at: {SERVICE_ACCOUNT_PATH}. Falling back to non-persistent counter.")
-        # Attempt to fall back to Application Default Credentials if running in a Google Cloud context
+        # 2. Fallback for non-persistent (in-memory) counter if variable is not set
+        print("FIREBASE_SA_JSON environment variable not found. Falling back to non-persistent counter.")
+        
+        # 3. Attempt to fall back to Application Default Credentials if running in a Google Cloud context
         if os.environ.get('FIREBASE_CONFIG'):
              firebase_config = json.loads(os.environ.get('FIREBASE_CONFIG'))
              if not firebase_admin._apps:
@@ -45,6 +52,7 @@ try:
                  print("Fallback: Firestore client initialized using Application Default Credentials.")
         else:
              print("FIREBASE_CONFIG environment variable not found. Counter will not be persistent.")
+
 
 except Exception as e:
     print(f"Error initializing Firebase/Firestore: {e}")
