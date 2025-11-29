@@ -186,4 +186,108 @@ h1 {
   /* Optional: Give it a width if you don't want it shrinking to text size */
   width: 50%; 
 }
-            
+
+.register-container h3 {
+  text-align: center;
+  font-size: xx-large;
+  font-weight:bolder;
+}
+
+.register-container{
+  align-items: center;
+}
+
+.arrow {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background-color: black; /* Color of the arrow's body */
+  border-radius: 5px 0 0 5px; /* Rounded left end */
+  
+  /* Apply the animation */
+  animation: up-down 1.5s ease-in-out infinite;
+}
+
+/* Pseudo-element for the arrowhead (triangle) */
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: -15px; /* Adjust vertical position */
+  left: 50px; /* Position next to the rectangle body */
+  
+  /* Create the triangle using borders */
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid black; /* Color of the arrowhead */
+}
+
+/* Keyframes for the Up and Down Movement */
+@keyframes up-down {
+  0% {
+    transform: rotate(90deg) translateX(0); /* Start position: up arrow, no movement */
+  }
+  50% {
+    transform: rotate(90deg) translateX(-20px); /* Mid-point: Move 20px up */
+  }
+  100% {
+    transform: rotate(90deg) translateX(0); /* End position: Return to start */
+  }
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Example height to show the movement */
+  width: 100%;
+}
+
+.input{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+#registrationForm {
+/* We'll use this container to center the elements */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally within the container */
+  padding: 20px;
+  max-width: 500px; /* Set a maximum width for the container */
+  width: 90%; /* Make it responsive */
+}
+
+/* --- Input Styling --- */
+#emailInput {
+ /* Make the text box bigger */
+  width: 400px; /* Increased width */
+  padding: 10px;
+  font-size: 1.1em;
+  margin-bottom: 20px; /* Space below the input */
+  background-color: white; /* Matching your image input background */
+  border: none;
+}
+        
+/* Ensure the form itself doesn't interfere with centering */
+#emailForm {
+    display: contents; /* Allows children to be treated as direct children of #registrationForm for centering */
+}
+
+/* --- Button Styling --- */
+#submitButton {
+/* The button is already centered due to align-items: center on #registrationForm */
+  padding: 8px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: white; /* Matching your image button background */
+  border: 1px solid white;
+}
+
+#message {
+  margin-top: 15px;
+  color: black; 
+  font-weight:bolder;
+}

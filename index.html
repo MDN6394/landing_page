@@ -16,7 +16,7 @@
             <img src="images/clean_logo.png" alt="logo" style="width:150px;height:150px;">
             <div class="right">
                 <a href="#features" class="features"> Features </a>
-                <a class="features"> Download </a>
+                <a href="#register" class="features"> Register </a>
                 <button class="basic-button" id="myButton">Send feedback</button>
                 <script src="js/script.js"></script>
             </div>
@@ -55,6 +55,23 @@
                      <h3>AI Coaching</h3>
                      <p>With all the data you provide in both trackings the app will help you have full control of your physical and emotional health</p>
                 </div>
+            </div>
+        </section>
+        <section id="register" class="register-container">
+            <h3>Interested? Register here!</h3>
+        </section>
+        <section class="arrow-container">
+            <div class="arrow"></div>
+        </section>
+        <section class="input">
+            <div id="registrationForm">
+                <label for="emailInput">Email:</label><br>
+                <form id="emailForm">
+                    <input type="email" id="emailInput" name="email" placeholder="enter your email" required><br>
+                    <button type="submit" id="submitButton">Submit</button>
+                </form>
+                <p id="THISmessage"></p>
+                <script src="js/email.js"></script>
             </div>
         </section>
     </body>

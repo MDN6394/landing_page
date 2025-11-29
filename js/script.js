@@ -12,3 +12,7 @@ function handleButtonClick() {
 // Step 3: Attach an event listener to the button
 // When the 'click' event occurs, the handleButtonClick function is executed.
 button.addEventListener('click', handleButtonClick);
+
+
+
+
