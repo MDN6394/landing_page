@@ -36,7 +36,7 @@ function email2(event) {
     const userEmail = emailInput.value; 
 
     // --- NEW: Send a request to the server ---
-    fetch('/api/increment-count', { // The URL path to your counter endpoint
+    fetch(API_BASE_URL + '/api/increment-count', { // The URL path to your counter endpoint
         method: 'POST', // Use POST to signal data change (increment)
         headers: {
             'Content-Type': 'application/json'
