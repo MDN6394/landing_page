@@ -2,7 +2,7 @@
 const emailForm = document.getElementById('emailForm');
 const emailInput = document.getElementById('emailInput');
 const messageDisplay = document.getElementById('THISmessage');
-API_BASE_URL ="http://127.0.0.1:5000"
+API_BASE_URL ="https://diabbeticbuddy.onrender.com"
 // const emailButton = document.getElementById('submitButton'); // This element is no longer the primary listener
 
 /**
