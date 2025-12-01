@@ -72,8 +72,9 @@ h1 {
 
 .phone{
     align-items: center;
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
+    margin-top: 20%;
 }
 
 .features-grid {
@@ -81,6 +82,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 equal columns */
   gap: 3rem; /* Space between items */
+  margin-top: 20%;
 }
 
 .feature-item {
@@ -191,6 +193,7 @@ h1 {
   text-align: center;
   font-size: xx-large;
   font-weight:bolder;
+  margin-top: 5%;
 }
 
 .register-container{
